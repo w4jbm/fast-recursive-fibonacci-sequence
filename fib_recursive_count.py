@@ -29,7 +29,7 @@ def fib(n):
 def main():
     for i in range(16):
         print(i, fib(i))
-    print('\nNumber of time fib(n) is called:')
+    print('\nNumber of times fib(n) is called:')
     print(list)
 
 
