@@ -31,3 +31,5 @@ This does break down when we get to fib(0) in the program because f(1) simply re
 After this, I did another test run with the @cache decorator reinserted and it does exactly what you'd expect--the function is just called once for each value and then the results are cached so there are no recalculations.
 
 ![Screen Shot 2](https://github.com/w4jbm/fast-recursive-fibonacci-sequence/blob/df0dd2603539e63eedf37c6240797d1ab7ef22f2/images/Screenshot_2022-10-29_10-56-38.png)
+
+I have now also coded this in Rust because I was curious if there was a similar way to cache the returned values for previous calls of the fib() function. There is an #[memoize] attribute in Rust and I created a cargo manifest to make use of it. Without any specific rigor, I did find that without #[memoize], Rust took around 43 seconds to caclulate the first 45 numbers in the series. When using #[memoize], it took around 0.03 seconds to run.
