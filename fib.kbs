@@ -1,0 +1,25 @@
+# fib.kbs - Fibonacci Numbers Test Program in BASIC 256
+#
+# This demonstrates the increase in speed that can be realized
+# by cacheing previously calculated values of a function instead
+# of recalculating them with each call.
+#
+# The recursive calculation of the Fibonacci series is not an
+# efficent way to actually do things, but it does serve as a
+# way to test this.
+
+global m
+dim m(36) fill -1
+
+function fib(i)
+    if i < 2 then return 1
+# Commenting out the following line disables cacheing
+    if m[i] > 0 then return m[i]
+    nfib = fib(i-1) + fib(i-2)
+    m[i] = nfib
+    return nfib
+end function
+
+for i=0 to 35
+print i,fib(i)
+next
