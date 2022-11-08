@@ -33,3 +33,5 @@ After this, I did another test run with the @cache decorator reinserted and it d
 ![Screen Shot 2](https://github.com/w4jbm/fast-recursive-fibonacci-sequence/blob/df0dd2603539e63eedf37c6240797d1ab7ef22f2/images/Screenshot_2022-10-29_10-56-38.png)
 
 I have now also coded this in Rust because I was curious if there was a similar way to cache the returned values for previous calls of the fib() function. There is an #[memoize] attribute in Rust and I created a cargo manifest to make use of it. Without any specific rigor, I did find that without #[memoize], Rust took around 43 seconds to caclulate the first 45 numbers in the series. When using #[memoize], it took around 0.03 seconds to run.
+
+The fib.kbs file also has an implementation in BASIC 256. To do this, there is simply an array that is initialized with negative values that get replaced with calculated values. To calculate out to 35 numbers takes about 82 seconds without using the array and less than a second with it. I typically use bwbasic, but it does not support recursive function definitions.
